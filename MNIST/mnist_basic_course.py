@@ -9,9 +9,11 @@ mnist = get_datasource.mnist
 x = tf.placeholder(tf.float32, [None, 784])
 
 # 784*10的二维数组，W是28*28图片权重数组，因为只有0～9，所以只有10，这里作为运算结果的缓存，在下面的代码中循环渐渐修正这个值
+# 初始化0向量
 W = tf.Variable(tf.zeros([784, 10]))
 
 # b是偏移量，这里作为运算结果的缓存，在下面的代码中循环渐渐修正这个值
+# 初始化0向量
 b = tf.Variable(tf.zeros([10]))
 
 # softmax 作为激励函数（详情：https://www.zhihu.com/question/22334626/answer/21036590）或者链接（link）函数（不知道是什么）使用。
